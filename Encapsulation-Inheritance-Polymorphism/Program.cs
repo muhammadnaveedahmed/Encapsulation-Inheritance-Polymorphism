@@ -9,6 +9,7 @@ namespace ConsoleApp
         {
             Console.WriteLine("Welcome!");
 
+            //test case 1
             try
             {
                 //initialize person object
@@ -38,6 +39,46 @@ namespace ConsoleApp
                 //reads age value
                 var weight = Console.ReadLine();
                 person.Weight = Convert.ToDouble(weight);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error message: " + ex.Message);
+            }
+
+            //test case 2
+            try
+            {
+                //initialize person object
+                Person person = new Person();
+
+                Console.WriteLine("Please enter age.");
+                //reads age value
+                var ageValue = Console.ReadLine();
+                var age = Convert.ToInt32(ageValue);
+
+                Console.WriteLine("Please enter first name.");
+                //reads age value
+                var fName = Console.ReadLine();
+
+                Console.WriteLine("Please enter last name.");
+                //reads age value
+                var lName = Console.ReadLine();
+
+                Console.WriteLine("Please enter height.");
+                //reads height value
+                var heightValue = Console.ReadLine();
+                var height = Convert.ToDouble(heightValue);
+
+                Console.WriteLine("Please enter weight.");
+                //reads age value
+                var weightValue = Console.ReadLine();
+                var weight = Convert.ToDouble(weightValue);
+
+                PersonHandler personHandler = new PersonHandler();
+                personHandler.CreatePerson(age, fName, lName, height, weight);
+
+                Console.WriteLine("Person created.");
 
             }
             catch (Exception ex)
